@@ -1,0 +1,49 @@
+models.py
+    Vehicle
+    ShaftGeometry
+    Material
+    WheelForces
+    LoadCaseResult
+    InternalLoads
+    StressState
+
+load_cases.py
+    acceleration_case()
+    braking_case()
+    cornering_case()
+
+forces.py
+    air_drag()
+    wheel_forces()
+    bearing_reactions()
+    motor_torque()
+    brake_forces()
+
+shaft.py
+    internal_loads_at_x()
+    internal_loads_along_shaft()
+
+stresses.py
+    axial_stress()
+    bending_stress()
+    torsional_stress()
+    von_mises()
+    stress_concentration()
+
+dimensioning.py
+    yield_safety_factor()
+    fatigue_safety_factor()
+    find_required_diameter()
+
+plotting.py
+    plot_shear_force()
+    plot_bending_moment()
+    plot_torque()
+    plot_stress()
+
+main.py
+    läser parametrar
+    kör tre lastfall
+    jämför resultat
+    plottar
+    dimensionerar axeln
