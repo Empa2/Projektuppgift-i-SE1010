@@ -1,5 +1,7 @@
 from dataclasses import dataclass
 
+# Values must be in SI units
+
 @dataclass
 class Vehicle:
     mass: float
@@ -34,6 +36,22 @@ class ShaftGeometry:
     @property
     def bearing_diameter(self) -> float:
         return 0.6 * self.shaft_diameter
+
+@dataclass
+class WheelForces:
+    front_left_vertical: float
+    front_right_vertical: float
+
+    rear_left_vertical: float
+    rear_right_vertical: float
+
+    rear_left_longitudinal: float
+    rear_right_longitudinal: float
+
+@dataclass
+class BearingForces:
+    left_vertical: float
+    right_vertical: float
 
 @dataclass
 class Material:
