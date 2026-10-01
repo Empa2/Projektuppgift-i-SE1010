@@ -1,5 +1,5 @@
 from models import Vehicle, ShaftGeometry
-from load_cases import AccelerationCase
+from load_cases import AccelerationCase, BrakingCase
 
 
 vehicle = Vehicle(
@@ -49,3 +49,27 @@ print(forces)
 
 print("\nMotor torque:", case.motor_torque(speed), "Nm")
 print("\nSprocket torque:", case.sprocket_force(speed), "Nm")
+
+
+braking = BrakingCase(vehicle, shaft)
+
+speed = vehicle.max_speed
+
+print("\n--- BRAKING CASE ---")
+print("Speed:", speed, "m/s")
+print("Air drag:", braking.air_drag(speed), "N")
+print("Braking force:", braking.braking_force(speed), "N")
+
+forces = braking.wheel_forces(speed)
+
+print("\nWheel forces:")
+print(forces)
+
+print("\nTotal brake torque:",
+      braking.brake_torque(speed), "Nm")
+
+print("Torque per brake disc:",
+      braking.brake_disc_torque(speed), "Nm")
+
+print("Force per brake disc:",
+      braking.brake_disc_force(speed), "N")

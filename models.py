@@ -17,6 +17,7 @@ class Vehicle:
     cg_height: float
     drag_height_offset: float
 
+    corner_radius: float
 
 @dataclass
 class ShaftGeometry:
@@ -47,6 +48,12 @@ class WheelForces:
 
     rear_left_longitudinal: float
     rear_right_longitudinal: float
+
+    front_left_lateral: float = 0
+    front_right_lateral: float = 0
+
+    rear_left_lateral: float = 0
+    rear_right_lateral: float = 0
 
 @dataclass
 class BearingForces:
