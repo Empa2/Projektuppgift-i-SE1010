@@ -21,7 +21,7 @@ class Vehicle:
 
 @dataclass
 class ShaftGeometry:
-    length: float
+    track_width: float
     bearing_position: float
 
     wheel_diameter: float

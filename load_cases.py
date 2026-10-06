@@ -191,7 +191,7 @@ class CorneringCase:
         s = self.shaft
 
         gamma = (
-            math.sqrt(G * s.length * v.corner_radius / (2 * v.cg_height))
+            math.sqrt(G * s.track_width * v.corner_radius / (2 * v.cg_height))
             / v.max_speed)
         
         return min(gamma, 1.0)
@@ -235,12 +235,12 @@ class CorneringCase:
 
         inner_vertical = (
             vehicle.mass * G / 2
-            - lateral_force * vehicle.cg_height / shaft.length
+            - lateral_force * vehicle.cg_height / shaft.track_width
         )
 
         outer_vertical = (
             vehicle.mass * G / 2
-            + lateral_force * vehicle.cg_height / shaft.length
+            + lateral_force * vehicle.cg_height / shaft.track_width
         )
 
         front_inner_vertical = (
@@ -299,7 +299,7 @@ class CorneringCase:
 
         rear_outer_lateral = (
             rear_lateral
-            * rear_inner_vertical
+            * rear_outer_vertical
             / (rear_inner_vertical + rear_outer_vertical)
         )
         return WheelForces(
