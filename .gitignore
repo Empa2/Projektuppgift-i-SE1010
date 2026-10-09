@@ -1,1 +1,19 @@
-__pycache__
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Editor och operativsystem
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Lokala filer
+.env
+.env.*
+!.env.example
